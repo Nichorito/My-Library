@@ -87,7 +87,6 @@ h1 {
 
 #main {
     padding-top: 100px;
-    background-color: red;
 }
 
 #form-container {
@@ -103,11 +102,46 @@ h1 {
 }
 
 form {
+    padding: 50px;
+    border-radius: 10px;
+    background-color: var(--header-color);
+    box-shadow: var(--box-shadow);
     display: flex;
-    width: 50%;
-    height: 100%;
-    
+    width: 30%;
+    height: 100%;    
     justify-content: center;
     flex-direction: column;
-    gap: 15px;
+}
+
+#input-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    
+    gap: 30px;
+}
+
+input {
+    background-color: var(--body-color);
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+#name {
+    grid-area: 1 / 1 / 1 / 5;
+    width: 1fr;
+}
+
+#author {
+    grid-area: 2 / 1 / 2 / 5;
+    width: 1fr;
+}
+
+#pages {
+    grid-area: 3 / 1 / 3 / 1;
+}
+
+#read-toggle {
+    grid-area: 3 / 3 / 3 / 5;
 }
