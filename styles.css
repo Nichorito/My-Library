@@ -168,14 +168,26 @@ h3, h4 {
 
 #toggle-main {
     grid-area: 1 / 2 / 1 / 2;
+    font-size: 1vmax;
     height: fit-content;
+    background-color: #e2fdbf;
+    border: 1px solid #4d8505;
+    padding: 4px 10px 4px 10px;
+    border-radius: 5px;
 }
 
 #toggle-container {
     display: flex;
     gap: 10%;
+    align-items: center;
 }
 
+#delete {
+    background-color: #ff989f;
+    border-radius: 5px;
+    font-size: 1vmax;
+    padding: 4px 10px 4px 10px;
+}
 
 
 /*//////////////////////////
