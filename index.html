@@ -23,33 +23,16 @@
     </div>
 
     <div id="main">
-        <div class="child-item">
-            <div class="info-container">
-                <h2 class="book-info">The Lord of the Rings</h2>
-            </div>
-
-            <div class="author-pages-container">
-                <h3 class="author.main">By:  J.R.R Tolkien</h3>
-                <h4> 250 Pgs.</h4>
-            </div>
-            <div class="button-container">                
-                <div class="toggle-container">
-                    <h3>Read?</h3>
-                    <button class="toggle-main">Toggle</button>
-                    
-                </div>
-                <button class="delete">Delete</button>
-            </div>
-            
-        </div>
+        
     </div>
+
     <div id="form-container" style="display: none;">
         <form id="form">
             <h2>Book Information</h2>
             <div id="input-grid">
-                <input type="text" id="name" placeholder="NAME">
-                <input type="text" id="author" placeholder="AUTHOR">
-                <input type="text" id="pages" placeholder="PAGES">
+                <input type="text" id="name" placeholder="TITLE" required> 
+                <input type="text" id="author" placeholder="AUTHOR" required>
+                <input type="text" id="pages" placeholder="PAGES" required>
                 <p>Read?</p>
                 <button id="read-toggle">Toggle</button>
                 <input type="submit" id="submit">

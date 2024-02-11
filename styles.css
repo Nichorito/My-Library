@@ -261,4 +261,5 @@ input {
 
 #submit {
     grid-area: 4 / 1 / 4 / 5;
+    cursor: pointer;
 }
