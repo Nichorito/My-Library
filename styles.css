@@ -12,6 +12,7 @@
     --body-color: #f7f7f7;
     --box-shadow: 0px 3px 3px #00000048;
     --input-border: #E5E7EB;
+    --button-hover: #e0ddddb0;
 
     --text: black;
     --input-bg: #2D2C35;
@@ -46,6 +47,9 @@
 #header {
     background-color: var(--header-color);
     box-shadow: var(--box-shadow);
+    width: 100vw;
+    height: 100px;
+    position: fixed;
 }
 
 .container {
@@ -73,10 +77,37 @@ h1 {
 }
 
 #add-book:hover {
-    background-color: var(--body-color);
+    background-color: var(--button-hover);
+    cursor: pointer;
 }
 
 #theme-switcher {
     background-color: #24232b;
 }
 
+#main {
+    padding-top: 100px;
+    background-color: red;
+}
+
+#form-container {
+    width: 100%;
+    justify-content: center; 
+    align-items: center;
+    position: fixed;
+    top: 50%; /* Place the top of the form container at 50% of the viewport height */
+    left: 0; /* Align the form container to the left */
+    transform: translateY(-50%); /* Adjust the position to center the form vertically */
+    width: 100%;
+    display: none;
+}
+
+form {
+    display: flex;
+    width: 50%;
+    height: 100%;
+    
+    justify-content: center;
+    flex-direction: column;
+    gap: 15px;
+}
