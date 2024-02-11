@@ -23,6 +23,7 @@ addBookButton.addEventListener('click', () => {
 const submit = document.querySelector('#submit');
 const grid = document.querySelector('#main');
 
+
 submit.addEventListener('click', () => {
     event.preventDefault();
 
@@ -36,6 +37,7 @@ submit.addEventListener('click', () => {
         CreateChild(name, author, pages)
     }
 })
+
 
 function CreateChild(name, author, pages) {
     //Create book object
@@ -79,6 +81,19 @@ function CreateChild(name, author, pages) {
     document.querySelector('#author').value = '';
     document.querySelector('#pages').value = '';
 
+    /*///////////////////////////
+    ///// DELETING AN ITEM //////
+    ///////////////////////////*/
+
+    let deleteButtons = document.querySelectorAll('.delete');
+
+    deleteButtons.forEach((button) => {
+        button.addEventListener('click', () => {
+        const parentDiv = button.parentElement.parentElement;
+        parentDiv.remove();
+    })
+})
+
     //Hide form
     form.style.display = 'none';
 }
@@ -91,9 +106,6 @@ function Book(title, author, pages, read) {
   this.info = function() {
     return (`${title} by ${author}, ${pages} pages, ${read}`)
   }
-}
-
-const theHobbit = new Book("The Hobbit", "J.R.R Tolkien", 295, "already read");
+};
 
 
-console.log(theHobbit.info());
