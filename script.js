@@ -31,6 +31,13 @@ submit.addEventListener('click', () => {
     const author = document.querySelector('#author').value;
     const pages = document.querySelector('#pages').value;
 
+
+    if (name != '' && author != '' && pages != '') {
+        CreateChild(name, author, pages)
+    }
+})
+
+function CreateChild(name, author, pages) {
     //Create book object
     const book = new Book(name, author, pages); 
 
@@ -61,16 +68,20 @@ submit.addEventListener('click', () => {
                     
                 </div>
                 <button class="delete">Delete</button>
-            </div>`
+            </div>`;
 
 
     //Append child to grid
-    grid.appendChild(newChild)
+    grid.appendChild(newChild);
+
+    //Reset form values
+    document.querySelector('#name').value = '';
+    document.querySelector('#author').value = '';
+    document.querySelector('#pages').value = '';
 
     //Hide form
     form.style.display = 'none';
-})
-
+}
 
 function Book(title, author, pages, read) {
   this.title = title;
