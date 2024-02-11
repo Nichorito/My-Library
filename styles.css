@@ -1,3 +1,5 @@
+/* ALL */
+
 * {
     box-sizing: border-box;
     padding: 0;
@@ -6,6 +8,8 @@
     font-family: 'Poppins', sans-serif;
     
 }
+
+/* THEME STYLES */
 
 :root[data-theme="light"] {
     --header-color: #ffffff;
@@ -44,6 +48,15 @@
     --default-transition: color .3s linear, background-color .3s linear, border-color .3s linear, fill .3s linear, transform .3s linear;
 }
 
+button:hover {
+    cursor: pointer;
+}
+
+
+/*//////////////////////////*/
+/*////////// HEADER //////////
+////////////////////////////*/
+
 #header {
     background-color: var(--header-color);
     box-shadow: var(--box-shadow);
@@ -78,16 +91,25 @@ h1 {
 
 #add-book:hover {
     background-color: var(--button-hover);
-    cursor: pointer;
 }
 
 #theme-switcher {
     background-color: #24232b;
 }
 
+/*/////////////////////////
+//////// MAIN AREA ////////
+/////////////////////////*/
+
 #main {
     padding-top: 100px;
 }
+
+
+
+/*//////////////////////////
+///////// FORM ////////////
+//////////////////////////*/
 
 #form-container {
     width: 100%;
@@ -117,8 +139,11 @@ form {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
     grid-template-rows: 1fr 1fr 1fr 1fr;
-    
     gap: 30px;
+}
+
+p {
+    justify-content: center;
 }
 
 input {
@@ -144,4 +169,8 @@ input {
 
 #read-toggle {
     grid-area: 3 / 3 / 3 / 5;
+}
+
+#submit {
+    grid-area: 4 / 1 / 4 / 5;
 }
