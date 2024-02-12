@@ -125,8 +125,8 @@ h1 {
     padding: 5%;
     box-shadow: var(--box-shadow-2);
     border-radius: 10px;
-    transition: var(--default-transition);
 }
+
 
 .info-container {
     display: flex;
@@ -232,9 +232,14 @@ form h2 {
 
 #input-grid {
     display: grid;
-    grid-template-columns: repeat(3, minmax(.5fr, 1fr));
+    grid-template-columns: repeat(4, minmax(0, 1fr));
     grid-template-rows: 1fr 1fr 1fr 1fr;
     gap: 30px;
+    align-items: center;
+}
+
+#read {
+    grid-area: 3 / 3 / 3 / 3;
 }
 
 p {
@@ -263,7 +268,7 @@ input {
 }
 
 #read-toggle {
-    grid-area: 3 / 3 / 3 / 5;
+    grid-area: 3 / 4 / 3 / 5;
 }
 
 #submit {
