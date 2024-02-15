@@ -66,7 +66,7 @@ function CreateChild(name, author, pages) {
             <div class="button-container">                
                 <div class="toggle-container">
                     <h3>Read?</h3>
-                    <button class="toggle-main">Toggle</button>
+                    <button class="toggle main-toggle">Toggle</button>
                     
                 </div>
                 <button class="delete">Delete</button>

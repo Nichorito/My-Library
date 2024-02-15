@@ -163,20 +163,28 @@ h3, h4 {
     font-size: 1vmax;
 }
 
-.toggle-main {
-    grid-area: 1 / 2 / 1 / 2;
+
+
+/*//////////TOGGLE///////////*/
+
+.toggle {
     font-size: 1vmax;
+    position: relative;
     height: fit-content;
-    background-color: #e2fdbf;
-    border: 1px solid #4d8505;
+    background-color: var(--body-color);
+    border: 2px solid rgba(0, 0, 0, 0.25);
     padding: 4px 10px 4px 10px;
     border-radius: 5px;
 }
 
-.toggle-container {
-    display: flex;
-    gap: 10%;
-    align-items: center;
+.toggle-inner {
+    background-color: var(--header-color);
+    height: 90%;
+    width: 90%;
+}
+
+.main-toggle {
+    grid-area: 1 / 2 / 1 / 2;
 }
 
 .delete {
