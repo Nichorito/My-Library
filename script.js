@@ -66,7 +66,16 @@ function CreateChild(name, author, pages) {
             <div class="button-container">                
                 <div class="toggle-container">
                     <h3>Read?</h3>
-                    <button class="toggle main-toggle"></button>
+                    <div class="toggle">
+                        <button class="toggle-inner" data-theme="not-read">
+                            <div id="X">
+                                X
+                            </div>
+                            <div id="✔">
+                                ✔
+                            </div>
+                        </button>
+                    </div>
                     
                 </div>
                 <button class="delete">Delete</button>
@@ -109,3 +118,7 @@ function Book(title, author, pages, read) {
 };
 
 
+
+// TOGGLE MECHANIC
+
+let 
