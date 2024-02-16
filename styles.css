@@ -191,17 +191,23 @@ h3, h4 {
     justify-content: center;
 }
 
-#toggle-inner::before {
-    content: '';
-    width: 2.22rem;
-    height: 2.22rem;
-    left: 0;
-    transition: var(--default-transition);
-    transform: translateX(var(--switch-circle-pos));
+.toggle-inner[data-theme="not-read"] #X {
+    background-color: red;
+}
+
+.toggle-inner[data-theme="read"] #X {
+    background-color: var(--switch-bg);
+}
+
+.toggle-inner[data-theme="not-read"] #✔ {
+    background-color: var(--switch-bg);
+}
+
+.toggle-inner[data-theme="read"] #✔ {
+    background-color: green);
 }
 
 #X {
-    background-color: red;
     width: 1.75rem;
     display: flex;
     align-items: center;
