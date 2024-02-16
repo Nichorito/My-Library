@@ -101,6 +101,21 @@ function CreateChild(name, author, pages) {
         const parentDiv = button.parentElement.parentElement;
         parentDiv.remove();
     })
+
+    ///////////////////////////////////
+    ////////// TOGGLE MECHANIC/////////
+    ///////////////////////////////////
+
+    let toggleButtons = document.querySelectorAll('.toggle-inner');
+
+    toggleButtons.forEach((button) => {
+        button.addEventListener('click', () => {
+            event.preventDefault();
+            button.getAttribute('data-theme') === 'not-read' ? button.setAttribute('data-theme', 'read') : button.setAttribute('data-theme', 'not-read');
+        })
+    })
+
+
 })
 
     //Hide form
@@ -119,6 +134,4 @@ function Book(title, author, pages, read) {
 
 
 
-// TOGGLE MECHANIC
 
-let 
