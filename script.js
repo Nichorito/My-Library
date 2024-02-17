@@ -24,7 +24,8 @@ const submit = document.querySelector('#submit');
 const grid = document.querySelector('#main');
 
 
-submit.addEventListener('click', () => {
+submit.addEventListener('click', (event) => {
+    event.preventDefault();
 
     //Get book information
     const name = document.querySelector('#name').value;
@@ -86,14 +87,6 @@ function CreateChild(name, author, pages) {
     //Append child to grid
     grid.appendChild(newChild);
 
-    //Hide form
-    form.style.display = 'none';
-
-    //Reset form values
-    document.querySelector('#name').value = '';
-    document.querySelector('#author').value = '';
-    document.querySelector('#pages').value = '';
-
     /*///////////////////////////
     ///// DELETING AN ITEM //////
     ///////////////////////////*/
@@ -104,11 +97,14 @@ function CreateChild(name, author, pages) {
         button.addEventListener('click', () => {
         const parentDiv = button.parentElement.parentElement;
         parentDiv.remove();
+     })
     })
-})
+
     ///////////////////////////////////
     ////////// TOGGLE MECHANIC/////////
     ///////////////////////////////////
+
+    let toggleButton = newChild.querySelector('.toggle-inner')
 
     toggleButton.addEventListener('click', () => {
         let toggleButton = newChild.querySelector('.toggle-inner');
@@ -116,6 +112,18 @@ function CreateChild(name, author, pages) {
         let newTheme = currentTheme === 'not-read' ? 'read' : 'not-read';
         toggleButton.setAttribute('data-theme', newTheme);
     })
+
+    ////////////////////////////////////
+    //////////// CLOSE FORM ////////////
+    ////////////////////////////////////
+
+    //Hide form
+    form.style.display = 'none';
+
+    //Reset form values
+    document.querySelector('#name').value = '';
+    document.querySelector('#author').value = '';
+    document.querySelector('#pages').value = '';
 }
 
 function Book(title, author, pages, read) {
