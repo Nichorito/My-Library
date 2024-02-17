@@ -31,19 +31,19 @@ submit.addEventListener('click', (event) => {
     const name = document.querySelector('#name').value;
     const author = document.querySelector('#author').value;
     const pages = document.querySelector('#pages').value;
-
+    const status = document.querySelector('#form-toggle').getAttribute('data-theme')
 
     if (name != '' && author != '' && pages != '') {
-        CreateChild(name, author, pages)
+        CreateChild(name, author, pages, status)
     }
 
     console.log("Submit button clicked");
 })
 
 
-function CreateChild(name, author, pages) {
+function CreateChild(name, author, pages, status) {
     //Create book object
-    const book = new Book(name, author, pages); 
+    const book = new Book(name, author, pages, status); 
 
     //Debug log
     console.log(book.info())
@@ -69,7 +69,7 @@ function CreateChild(name, author, pages) {
                 <div class="toggle-container">
                     <h3>Read?</h3>
                     <div class="toggle">
-                        <button class="toggle-inner" data-theme="not-read">
+                        <button class="toggle-inner" data-theme="${status}">
                             <div id="X">
                                 X
                             </div>
