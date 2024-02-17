@@ -35,13 +35,23 @@
                 <input type="text" id="pages" placeholder="PAGES" required>
                 <p id="read">Read?</p>
                 <div id="read-toggle" class="toggle">
-                    <button class="toggle-inner" data-theme="not-read">
+                    <button class="toggle-inner" id="form-toggle" data-theme="not-read">
                         <div id="X">
                             X
                         </div>
                         <div id="✔">
                             ✔
                         </div>
+                        <script>
+                            let formToggle = document.querySelector('#form-toggle');
+
+                            formToggle.addEventListener('click', (event) => {
+                                event.preventDefault();
+                                let currentTheme = formToggle.getAttribute('data-theme');
+                                let newTheme = currentTheme === 'not-read' ? 'read' : 'not-read';
+                                formToggle.setAttribute('data-theme', newTheme);
+                            })
+                        </script>
                     </button>
                 </div>
                 <input type="submit" id="submit">

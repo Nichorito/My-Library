@@ -25,7 +25,6 @@ const grid = document.querySelector('#main');
 
 
 submit.addEventListener('click', () => {
-    event.preventDefault();
 
     //Get book information
     const name = document.querySelector('#name').value;
@@ -36,6 +35,8 @@ submit.addEventListener('click', () => {
     if (name != '' && author != '' && pages != '') {
         CreateChild(name, author, pages)
     }
+
+    console.log("Submit button clicked");
 })
 
 
@@ -85,6 +86,9 @@ function CreateChild(name, author, pages) {
     //Append child to grid
     grid.appendChild(newChild);
 
+    //Hide form
+    form.style.display = 'none';
+
     //Reset form values
     document.querySelector('#name').value = '';
     document.querySelector('#author').value = '';
@@ -101,25 +105,17 @@ function CreateChild(name, author, pages) {
         const parentDiv = button.parentElement.parentElement;
         parentDiv.remove();
     })
-
+})
     ///////////////////////////////////
     ////////// TOGGLE MECHANIC/////////
     ///////////////////////////////////
 
-    let toggleButtons = document.querySelectorAll('.toggle-inner');
-
-    toggleButtons.forEach((button) => {
-        button.addEventListener('click', () => {
-            event.preventDefault();
-            button.getAttribute('data-theme') === 'not-read' ? button.setAttribute('data-theme', 'read') : button.setAttribute('data-theme', 'not-read');
-        })
+    toggleButton.addEventListener('click', () => {
+        let toggleButton = newChild.querySelector('.toggle-inner');
+        let currentTheme = toggleButton.getAttribute('data-theme');
+        let newTheme = currentTheme === 'not-read' ? 'read' : 'not-read';
+        toggleButton.setAttribute('data-theme', newTheme);
     })
-
-
-})
-
-    //Hide form
-    form.style.display = 'none';
 }
 
 function Book(title, author, pages, read) {
